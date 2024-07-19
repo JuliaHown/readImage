@@ -15,12 +15,16 @@ function uploadFile(event) {
 
     formData.append('file', fileInput.files[0]);
 
+    document.getElementById('loading').style.display = 'block';
+
     fetch('/upload', {
         method: 'POST',
         body: formData
     })
     .then(response => response.json())
     .then(data => {
+        document.getElementById('loading').style.display = 'none';
+
         if (data.texto) {
             document.getElementById('extractedText').textContent = data.texto;
         } else {
@@ -28,6 +32,8 @@ function uploadFile(event) {
         }
     })
     .catch(error => {
+        document.getElementById('loading').style.display = 'none';
+
         document.getElementById('extractedText').textContent = 'Erro: ' + error.message;
     });
 }

@@ -11,7 +11,7 @@ Este projeto é uma aplicação web que permite o upload de imagens e a extraç�
 ### Tecnologias Utilizadas
 
 <a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=python,flask,html,css,js,heroku,api" />
+  <img src="https://skillicons.dev/icons?i=python,flask,html,css,js,netlify" />
 </a>
 
 <br>

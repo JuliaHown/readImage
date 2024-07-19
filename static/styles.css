@@ -1,0 +1,79 @@
+/* styles.css */
+
+/* Variáveis de cores (não aplicáveis em CSS puro, mas use os valores diretamente) */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f1f1f1;
+    --button-color: #fff;
+    --button-hover-color: #ddd;
+}
+
+/* Estilização do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container principal */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Título */
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--button-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Resultados */
+#result {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#result h2 {
+    color: var(--primary-color);
+}
+
+#result p {
+    font-size: 16px;
+    color: #333;
+}

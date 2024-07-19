@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>readImage</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>readImage</h1>
+        <h4>Selecione um Arquivo</h4>
+        <form id="uploadForm">
+            <input type="file" id="fileInput" />
+            <button type="button" id="uploadButton">Upload</button>
+        </form>
+        <div id="result">
+            <h2>Texto Extraído:</h2>
+            <p id="extractedText"></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const uploadButton = document.getElementById('uploadButton');
+            uploadButton.addEventListener('click', uploadFile);
+        });
+
+        function uploadFile(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            const fileInput = document.getElementById('fileInput');
+            if (fileInput.files.length === 0) {
+                document.getElementById('result').textContent = 'Por favor, selecione um arquivo.';
+                return;
+            }
+
+            formData.append('file', fileInput.files[0]);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.texto) {
+                    document.getElementById('extractedText').textContent = data.texto;
+                } else {
+                    document.getElementById('extractedText').textContent = 'Erro: ' + (data.error || 'Erro desconhecido');
+                }
+            })
+            .catch(error => {
+                document.getElementById('extractedText').textContent = 'Erro: ' + error.message;
+            });
+        }
+    </script>
+</body>
+
+</html>

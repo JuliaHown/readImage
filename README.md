@@ -2,6 +2,9 @@
 
 Este projeto é uma aplicação web que permite o upload de imagens e a extração de texto a partir dessas imagens usando a API Tesseract OCR. A aplicação é construída com Flask para o backend e HTML/CSS/JavaScript para o frontend. É um exemplo prático de como integrar uma API de OCR em uma aplicação web.
 
+![readImage_picture](https://github.com/user-attachments/assets/66883c62-d1cd-4d22-94ad-4d6a9234be47)
+
+
 ## Introdução à API Tesseract
 [Tesseract](https://github.com/tesseract-ocr/tesseract/tree/main) é uma das bibliotecas OCR (Reconhecimento Óptico de Caracteres) mais poderosas e de código aberto disponíveis. Desenvolvida pelo Google, ela suporta uma ampla gama de idiomas e pode ser treinada para reconhecer textos em diferentes formatos e estilos. O Tesseract converte imagens contendo texto em texto editável, o que é útil para diversas aplicações, como digitalização de documentos e extração de dados.
 

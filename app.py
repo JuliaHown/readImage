@@ -5,7 +5,6 @@ import os
 
 app = Flask(__name__)
 
-# Configurar o caminho para o executável do Tesseract (necessário para Windows)
 pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 def extrair_texto_da_imagem(caminho_da_imagem):
